@@ -15,9 +15,44 @@ header h1 {
 
 footer {
     height: 100px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
+    /* flex-wrap: wrap; */
+}
+footer .footer__info{
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+footer .footer__github{
+    padding: 10px;
+    border: 2px solid #30c5ff;
+}
+footer .footer__link{
+    text-decoration: none;
+    color: #30c5ff;
+}
+footer .footer__data{
+    color: #fff;
+}
+footer .footer__link:hover{
+    text-decoration: none;
+    color: #777676;
+    transition-duration: 0.2s;
+    box-shadow:  0 0.3em 0.5em 0.2em #82d592;
+    color: #69db7e;
+    border-color: #3fcc59;
+}
+footer .footer__img {
+    width: 100px;
+    height: 60px;
+    display: block;
+    background: #fff;
+    border: 2px solid #fff;
 }
 footer .copyright {
     font-size: 14px;
@@ -33,3 +68,4 @@ footer .copyright a:hover {
 footer .copyright:before {
     content: '©';
 }
+
