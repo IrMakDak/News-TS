@@ -78,7 +78,7 @@
 }
 
 .news__item .news__description .news__read-more a {
-    color: #5ad67d;
+    color: #fcb05f;
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -111,8 +111,9 @@
     content: '';
     position: absolute;
     height: 5px;
-    background: #5ad67d;
-    width: 35px;
+    background: #fcb05f;
+    /* width: 35px; */
+    width: 100%;
     top: -0.75rem;
     border-radius: 3px;
 }
