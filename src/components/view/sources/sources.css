@@ -1,16 +1,20 @@
 .sources {
     display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 20px;
+    top: 20px;
     flex-wrap: nowrap;
-    width: 100%;
-    height: 120px;
-    overflow: auto;
-    align-items: center;
+    height: 100%;
+    overflow: scroll;
+    align-items: left;
     font: 300 1em 'Fira Sans', sans-serif;
 }
 
 .source__item {
     background: none;
     border: 2px solid #fcb05f;
+    border-radius: 10%;
     font: inherit;
     line-height: 1;
     margin: 0.5em;
@@ -29,7 +33,7 @@
 }
 
 .source__item-name {
-    font-weight: 400;
+    font-weight: 600;
     white-space: nowrap;
 }
 
