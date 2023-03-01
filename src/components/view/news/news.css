@@ -124,7 +124,27 @@
 .news__item:hover .news__meta-details {
     left: 0%;
 }
-
+@media (max-width: 1500px) {
+    .news{
+        position: relative;
+        width: 720px;
+        margin-left: 24%;
+    }
+    .news__container{
+        position: relative;
+    }
+    .news__item {
+        width: auto;
+    }
+}
+@media(max-width: 1000px) {
+    .news{
+        width: auto;
+        position: static;
+        margin: 0;
+        padding: 20px;
+    }
+}
 @media (min-width: 640px) {
     .news__item {
         flex-direction: row;

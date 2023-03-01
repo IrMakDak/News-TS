@@ -10,6 +10,11 @@
     align-items: left;
     font: 300 1em 'Fira Sans', sans-serif;
 }
+@media (max-width: 1500px) {
+    .sources {
+        width: 230px;
+    }
+}
 
 .source__item {
     background: none;
@@ -34,9 +39,20 @@
 
 .source__item-name {
     font-weight: 600;
-    white-space: nowrap;
+    white-space: wrap;
 }
-
+@media (max-width: 1000px) {
+    .sources {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        height: 80px;
+        align-items: center;
+    }
+    .source__item-name {
+        white-space: nowrap;
+    }
+}
 @media (max-width: 640px) {
     .source__item{
         padding: 1em 1em;

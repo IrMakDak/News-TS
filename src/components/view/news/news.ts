@@ -36,8 +36,8 @@ class News {
             fragment.append(newsClone);
         });
 
-        convertType<Element>(document.querySelector('.news')).innerHTML = '';
-        convertType<Element>(document.querySelector('.news')).appendChild(fragment);
+        convertType<Element>(document.querySelector('.news__container')).innerHTML = '';
+        convertType<Element>(document.querySelector('.news__container')).appendChild(fragment);
     }
 }
 

@@ -76,4 +76,17 @@ footer .copyright a:hover {
 footer .copyright:before {
     content: '©';
 }
-
+@media (max-width: 1500px) {
+    footer{
+        margin-top: 200px;
+        margin: 0 auto;
+    }
+    footer .footer__info{
+        margin-top: 10px;
+        padding: 0;
+        bottom: 5px;
+        width: 310px;
+        justify-content: space-around;
+        border: 0;
+    }
+}
