@@ -1,14 +1,11 @@
 import AppLoader from './appLoader';
 import { INews, ISources } from '../appInterfaces';
 import { convertType } from '../view/news/news';
+import { EndpointNames } from './loader';
 
-enum EndpointNames {
-    SOURCES = 'sources',
-    EVERYTHING = 'everything',
-}
 class AppController extends AppLoader {
     public getSources(callback: (data: Partial<ISources>) => void): void {
-        super.getResp({ endpoint: EndpointNames.SOURCES }, callback);
+        super.getResp({ endpoint: EndpointNames.Sources }, callback);
     }
 
     public getNews(e: Event, callback: (data: Partial<INews>) => void) {
@@ -22,7 +19,7 @@ class AppController extends AppLoader {
                     newsContainer.setAttribute('data-source', sourceId);
                     super.getResp(
                         {
-                            endpoint: EndpointNames.EVERYTHING,
+                            endpoint: EndpointNames.Everything,
                             options: {
                                 sources: sourceId,
                             },

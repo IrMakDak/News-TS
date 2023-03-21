@@ -1,9 +1,6 @@
 import './news.css';
 import { IData } from '../../appInterfaces';
-
-function convertType<T>(selector: Element | Node | null) {
-    return selector as T;
-}
+import { convertType } from '../../utils/utils';
 
 class News {
     draw(data: ReadonlyArray<IData>) {

@@ -1,16 +1,21 @@
 import { ISources, INews } from '../appInterfaces';
 
-enum ApiInfo {
-    BASELINK = 'https://newsapi.org/v2/',
-    KEY = '1a41f19ed9984f29934d5cb6fb092b66',
+enum ResponseStatus {
+    Unauthorized = 401,
+    NotFound  = 404
 }
-type TOptionKey = { apiKey: ApiInfo.KEY };
+
+enum ApiInfo {
+    Baselink = 'https://newsapi.org/v2/',
+    Key = '1a41f19ed9984f29934d5cb6fb092b66',
+}
+type TOptionKey = { apiKey: ApiInfo.Key };
 
 enum EndpointNames {
-    SOURCES = 'sources',
-    EVERYTHING = 'everything',
+    Sources = 'sources',
+    Everything = 'everything',
 }
-type TEndpoint = EndpointNames.SOURCES | EndpointNames.EVERYTHING;
+type TEndpoint = EndpointNames.Sources | EndpointNames.Everything;
 
 enum Methods {
     GET = 'GET',
@@ -18,15 +23,17 @@ enum Methods {
 }
 type TMethod = Methods.GET | Methods.POST;
 
+type TOptions = TOptionKey | {};
+
 interface IResp {
-    endpoint: EndpointNames.SOURCES | EndpointNames.EVERYTHING;
-    options?: TOptionKey | {};
+    endpoint: EndpointNames.Sources | EndpointNames.Everything;
+    options?: TOptions
 }
 
 class Loader {
-    private baseLink: ApiInfo.BASELINK;
+    private baseLink: ApiInfo.Baselink;
     protected options: TOptionKey;
-    constructor(baseLink: ApiInfo.BASELINK, options: TOptionKey) {
+    constructor(baseLink: ApiInfo.Baselink, options: TOptionKey) {
         this.baseLink = baseLink;
         this.options = options;
     }
@@ -41,15 +48,15 @@ class Loader {
 
     private errorHandler(res: Response) {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === ResponseStatus.Unauthorized || res.status === ResponseStatus.NotFound)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
         return res;
     }
 
-    private makeUrl(options: object, endpoint: TEndpoint) {
-        const urlOptions: object = { ...this.options, ...options };
+    private makeUrl(options: TOptions, endpoint: TEndpoint) {
+        const urlOptions: TOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
         const keys = Object.keys(urlOptions);
@@ -63,7 +70,7 @@ class Loader {
         method: TMethod,
         endpoint: TEndpoint,
         callback: (data: INews | ISources) => void,
-        options = {}
+        options: TOptions = {}
     ): void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
