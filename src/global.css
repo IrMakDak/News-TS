@@ -1,0 +1,92 @@
+body {
+    color: #fff;
+    background: #484848;
+    font-family: sans-serif;
+}
+
+header {
+    padding: 10px 30px;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer {
+    height: 100px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+}
+footer .footer__info{
+    border: 1px solid #fff;
+    margin: 0 auto;
+    display: flex;
+    height: 80px;
+    width: 370px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+footer .footer__github{
+    padding: 10px;
+    border: 2px solid #fcb05f;
+    border-radius: 10%;
+}
+footer .footer__link{
+    text-decoration: none;
+    color: #fcb05f;
+}
+footer .footer__data{
+    color: #fff;
+}
+footer .footer__link:hover{
+    text-decoration: none;
+    color: #777676;
+    transition-duration: 0.2s;
+    box-shadow:  0 0.3em 0.5em 0.2em #cccc3f;
+    color: #cccc3f;
+    border-color: #cccc3f;
+}
+footer .footer__img {
+    width: 100px;
+    height: 60px;
+    display: block;
+    background: #fff;
+    border: 2px solid #fff;
+}
+footer .copyright {
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+footer .copyright a {
+    color: #fcb05f;
+}
+footer .copyright a:hover {
+    color: #cccc3f;
+}
+footer .copyright:before {
+    content: '©';
+}
+@media (max-width: 1500px) {
+    footer{
+        margin-top: 200px;
+        margin: 0 auto;
+    }
+    footer .footer__info{
+        margin-top: 10px;
+        padding: 0;
+        bottom: 5px;
+        width: 310px;
+        justify-content: space-around;
+        border: 0;
+    }
+}
