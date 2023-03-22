@@ -6,7 +6,7 @@
 
 ### About this project
 - 🌱 [News API used](https://newsapi.org/)
-- 🌼 In accordance with the assignment, the project was converted from Javascript to Typescript 
+- 🌼 In accordance with the assignment, the project was migrated from Javascript to Typescript 
 - 🌸 [Read full task](https://github.com/rolling-scopes-school/js-fe-course-en/blob/main/tasks/typescript/typescript.md)
 
 ---
